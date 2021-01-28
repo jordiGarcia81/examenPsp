@@ -5,16 +5,18 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class App {
-    private static final int SERVER_PORT = 9876;
+    private static final int PORT = 9876;
 
 
     public static void main(String[] args) throws IOException {
 
-
-        ServerSocket serverSocket = new ServerSocket(SERVER_PORT);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        ServerSocket serverSocket = new ServerSocket(PORT);
         Socket clientConection;
         clientConection = serverSocket.accept();
 
@@ -33,8 +35,8 @@ public class App {
                 System.out.println("1.takeOff");
                 System.out.println("2.land");
                 System.out.println("3.firePrimaryCannon");
-                System.out.println("5.fireSecondaryWeapon");
-                System.out.println("6.shutDown");
+                System.out.println("4.fireSecondaryWeapon");
+                System.out.println("5.shutDown");
                 dataOutput.writeUTF("1.takeOff 2.land 3.firePrimaryCannon 4.Bloquear Servidor 5.fireSecondaryWeapon 6.shutDown");
 
 

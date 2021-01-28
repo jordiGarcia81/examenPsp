@@ -24,6 +24,9 @@ public class Client {
 
 
 
+
+
+
         dataInput.close();
         dataOutput.close();
         socket.close();
