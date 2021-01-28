@@ -30,7 +30,7 @@ public class Server {
             comando= dataInput.readUTF();
             System.out.println(comando);
 
-           
+
 
         }catch (IOException ex){
             System.out.println(ex);
